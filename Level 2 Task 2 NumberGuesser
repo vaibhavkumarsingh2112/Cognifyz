@@ -1,0 +1,31 @@
+import random
+
+def number_guessing_game():
+    
+    min_range = int(input("Enter the minimum value of the range: "))
+    max_range = int(input("Enter the maximum value of the range: "))
+
+   
+    random_number = random.randint(min_range, max_range)
+
+    print(f"Guess a number between {min_range} and {max_range}.")
+
+    while True:
+        try:
+            
+            user_guess = int(input("Enter your guess: "))
+
+            
+            if user_guess < random_number:
+                print("Too low! Try again.")
+            elif user_guess > random_number:
+                print("Too high! Try again.")
+            else:
+                print("Congratulations! You guessed the number correctly.")
+                break
+
+        except ValueError:
+            print("Please enter a valid integer.")
+
+number_guessing_game()
+
