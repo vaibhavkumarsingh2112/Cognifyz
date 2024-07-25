@@ -1,0 +1,19 @@
+import re
+
+
+def email_validator_function(email):
+
+    email = email.lower()
+
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    if re.match(pattern, email):
+        return True
+    return False
+
+
+email = input("Enter an email address:")
+
+if email_validator_function(email):
+    print("Valid Email")
+else:
+    print("Invalid Email")
