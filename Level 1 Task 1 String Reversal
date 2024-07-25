@@ -1,0 +1,7 @@
+def reverse_the_string(MyString):
+  return MyString[::-1]
+
+MyString = input("Enter a string: ")
+mytxt = reverse_the_string(MyString)
+
+print(mytxt)
