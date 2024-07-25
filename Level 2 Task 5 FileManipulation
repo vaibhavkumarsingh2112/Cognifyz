@@ -1,0 +1,28 @@
+def word_occurance(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            text = file.read().lower()
+
+        words = text.split()
+        word_count = {}
+
+        for word in words:
+            word = ''.join(char for char in word if char.isalnum())
+            if word:
+                if word in word_count:
+                    word_count[word] += 1
+                else:
+                    word_count[word] = 1
+
+        sorted_word_count = dict(sorted(word_count.items()))
+
+        print("Word occurrences in alphabetical order:")
+        for word, count in sorted_word_count.items():
+            print(f"{word}: {count}")
+    except FileNotFoundError:
+        print(f"File {file_path} not found.")
+
+
+file_path = 'sample.txt'
+
+word_occurance(file_path)
